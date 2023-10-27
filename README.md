@@ -73,6 +73,50 @@ route: [
 
 ![routes](/assets/existing_routes.png)
 
+# Docker Setup
+
+1. Install Docker
+2. Build the project
+```
+docker build -t dfm .
+```
+3. Run the project
+```
+docker run -p 8000:8000 dfm
+```
+4. Open the browser and go to http://localhost:8000
+
+# VirtEnv Setup
+
+1. Install Python 3.10
+```
+brew install python@3.10
+```
+2. Install venv
+```
+pip install venv
+```
+3. Create a virtual environment
+```
+python -m venv venv
+```
+4. Activate the virtual environment
+```
+source venv/bin/activate
+```
+5. Install the dependencies
+```
+pip install -r requirements.txt
+```
+6. Run the project
+```
+uvicorn main:app --host 0.0.0.0 --port 8080 --reload
+```
+7. Open the browser and go to http://localhost:8080
+
+
+
+
 
 # References
 - <a href="https://convoy.com/digital-freight-network/">Digital Freight Network</a>
