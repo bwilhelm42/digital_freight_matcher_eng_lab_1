@@ -1,11 +1,11 @@
 # Engineering Lab 1 - Digital Freight Matching
 
-# Problem Statement
+## Problem Statement
 <p>Infinity and Beyond, a family-owned trucking enterprise based in Atlanta, GA, recently landed a significant contract with the Too-Big-To-Fail company. This substantial collaboration led them to acquire five new trucks and establish expansive routes spanning the entirety of the state. Despite having fixed rates determined by the volume of cargo transported, the company faces challenges. The mounting pressures of inflation and decreased contracted cargo have caused them to feel the financial pinch on some of these routes.</p>
 <p>The dilemma deepens when considering their binding four-year contract that prevents them from canceling any existing routes. This contractual commitment, coupled with the specialized trucks they've already invested in for the project, has placed them in a tight spot. The repercussions of prematurely terminating the contract would involve hefty fines, and the ongoing maintenance of the trucks only adds to their predicament.</p>
 <p>In search of a solution, the owners of Infinity and Beyond, Mr. and Miss. Lightyear stumbled upon news about Digital Freight Matching (DFM). Investing their weekend into comprehending this concept, they began to see it as a potential lifeline for their company's current challenges.</p>
 
-# Solution
+## Solution
 
 <p>Build a Pricing and Scheduling Service that allows Mr. and Miss. Lightyear to offer cargo space in the current fixed routes, to clients that want to transport through those same paths. The service will receive orders in a specific format (used in their current control system), and will try to match any existing route, based on the following criteria:</p>
 
@@ -20,7 +20,7 @@
 - Includes cargo type: Some types can't be transported together;
 - Union: Truck drivers must take a 30 minute break after 4 hours of work.
 
-# Overall Architecture
+## Overall Architecture
 
 ![architecture](/assets/architecture.png)
 
@@ -73,56 +73,68 @@ route: [
 
 ![routes](/assets/existing_routes.png)
 
-# Docker Setup
+## Docker Setup
 
 1. Install Docker
-2. Build the project
-```
-docker build -t dfm .
-```
-3. Run the project
-```
-docker run -p 8000:8000 dfm
-```
+1. Build the docker image
+
+	```sh
+	docker build -t dfm .
+	```
+
+1. Run the container
+
+	```sh
+	docker run -p 8000:8000 dfm
+	```
+
 4. Open the browser and go to http://localhost:8000
 
-# VirtEnv Setup
+## VirtEnv Setup
 
 1. Install Python 3.10
-```
-brew install python@3.10
-```
-2. Install venv
-```
-pip install venv
-```
-3. Create a virtual environment
-```
-python -m venv venv
-```
-4. Activate the virtual environment
-```
-source venv/bin/activate
-```
-5. Install the dependencies
-```
-pip install -r requirements.txt
-```
-6. Run the project
-```
-uvicorn main:app --host 0.0.0.0 --port 8080 --reload
-```
-7. Open the browser and go to http://localhost:8080
 
+	```sh
+	brew install python@3.10
+	```
 
+1. Install venv
 
+	```sh
+	pip install venv
+	```
 
+1. Create a virtual environment
 
-# References
+	```sh
+	python -m venv venv
+	```
+
+1. Activate the virtual environment
+
+	```sh
+	source venv/bin/activate
+	```
+
+1. Install the dependencies
+
+	```sh
+	pip install -r requirements.txt
+	```
+
+1. Run the project
+
+	```sh
+	uvicorn main:app --host 0.0.0.0 --port 8080 --reload
+	```
+
+1. Open the browser and go to http://localhost:8080
+
+## References
+
 - <a href="https://convoy.com/digital-freight-network/">Digital Freight Network</a>
 - <a href="https://www.freightcourse.com/digital-freight-matching/">DFM - Digital Freight Matching</a>
 - <a href="https://www.inboundlogistics.com/articles/deadhead-trucking/#:~:text=Deadhead%20trucking%20is%20when%20a,and%20how%20to%20minimize%20it">Deadhead Trucking.</a>
 - <a href="https://www.truckinfo.net/research/trucking-statistics">Trucking Trends</a>
 
 <span><i>Made at <a href='https://qwasar.io'>Qwasar Silicon Valley</a></i></span> <span><img alt='Qwasar Silicon Valley Logo' src='https://storage.googleapis.com/qwasar-public/qwasar-logo_50x50.png' width='20px'></span>
-
