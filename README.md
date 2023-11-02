@@ -132,9 +132,17 @@ route: [
 
 ## References
 
+### Trucking information
+
 - <a href="https://convoy.com/digital-freight-network/">Digital Freight Network</a>
 - <a href="https://www.freightcourse.com/digital-freight-matching/">DFM - Digital Freight Matching</a>
 - <a href="https://www.inboundlogistics.com/articles/deadhead-trucking/#:~:text=Deadhead%20trucking%20is%20when%20a,and%20how%20to%20minimize%20it">Deadhead Trucking.</a>
 - <a href="https://www.truckinfo.net/research/trucking-statistics">Trucking Trends</a>
+
+### Project documentation
+
+- [Eng. Labs 1 - Digital Freight Matching](https://docs.google.com/spreadsheets/d/1cSc2ZNoU0yKbgvMdWE2HC2mP214_PApjAlzfwvX_KUs/edit#gid=0)
+- [Digital Freight Matching project google doc](https://docs.google.com/document/d/1mUVKYH44ZExaQzY1FqbnZCXabasc_k3vlqs3n3qKqg4/edit?pli=1#heading=h.8g5sf6ejx8q6)
+- [Jira board](https://goodlistener.atlassian.net/jira/software/projects/DFM/boards/5)
 
 <span><i>Made at <a href='https://qwasar.io'>Qwasar Silicon Valley</a></i></span> <span><img alt='Qwasar Silicon Valley Logo' src='https://storage.googleapis.com/qwasar-public/qwasar-logo_50x50.png' width='20px'></span>
