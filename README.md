@@ -73,7 +73,7 @@ route: [
 
 ![routes](/assets/existing_routes.png)
 
-## Docker Setup
+## Production Docker Setup
 
 1. Install Docker
 1. Build the docker image
@@ -88,7 +88,26 @@ route: [
 	docker run -p 8000:8000 dfm
 	```
 
-4. Open the browser and go to http://localhost:8000
+1. Open the browser and go to http://localhost:8000
+
+## Development Docker Setup
+
+This setup allows hot reloading of the code.
+
+1. Install Docker
+1. Build the docker image
+
+	```sh
+	docker build --file dev-Dockerfile -t dev-dfm .
+	```
+
+1. Run the container
+
+	```sh
+	docker run -v .:/app -p 8000:8000 --name dev-dfm dev-dfm
+	```
+
+1. Open the browser and go to http://localhost:8000
 
 ## VirtEnv Setup
 
