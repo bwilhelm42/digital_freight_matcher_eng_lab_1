@@ -1,12 +1,12 @@
-from typing import Union
+from typing import Union, Tuple
 from fastapi import FastAPI, Request
 
 # this is to validate and parse json payloads
 from pydantic import BaseModel
 
 class Order(BaseModel):
-    location_origin: float
-    location_destination: float
+    location_origin: Tuple[float, float]
+    location_destination: Tuple[float, float]
     client: str
     cargo: str
     contract_type: str

@@ -1,8 +1,10 @@
+import json
 from typing import Union
 from fastapi import FastAPI
 from fastapi.responses import PlainTextResponse
 
 import order
+import triangle
 
 app = FastAPI()
 
@@ -19,3 +21,10 @@ def read_item(item_id: int, q: Union[str, None] = None):
 def get_order(order_details: order.Order):
     order.save_order(order_details)
     return f"order saved\n"
+
+@app.get("/validate_order")
+def validate_point(lat: int, lon: int):
+    j = json.loads('file.json')
+    o = order.Order(j)
+    return lat + lon
+    
