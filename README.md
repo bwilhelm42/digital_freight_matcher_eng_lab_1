@@ -96,19 +96,20 @@ This setup allows hot reloading of the code.
 Depending on your setup you may need to run the docker commands with `sudo`.
 
 1. Install Docker
-1. Build the docker image
+	- Install docker-buildx if you don't have docker desktop installed
+3. Build the docker image
 
 	```sh
-	DOCKER_BUILDKIT=1 docker build --target development -t dfm .
+	docker build --target development -t dfm .
 	```
 
-1. Run the container
+4. Run the container
 
 	```sh
-	docker run -v .:/app -p 8000:8000 --name dfm dfm
+	docker run -p 8000:8000 -v .:/app dfm
 	```
 
-1. Open the browser and go to http://localhost:8000
+5. Open the browser and go to http://localhost:8000
 
 ## VirtEnv Setup
 
