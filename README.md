@@ -93,18 +93,19 @@ route: [
 ## Development Docker Setup
 
 This setup allows hot reloading of the code.
+Depending on your setup you may need to run the docker commands with `sudo`.
 
 1. Install Docker
 1. Build the docker image
 
 	```sh
-	docker build --file dev-Dockerfile -t dev-dfm .
+	DOCKER_BUILDKIT=1 docker build --target development -t dfm .
 	```
 
 1. Run the container
 
 	```sh
-	docker run -v .:/app -p 8000:8000 --name dev-dfm dev-dfm
+	docker run -v .:/app -p 8000:8000 --name dfm dfm
 	```
 
 1. Open the browser and go to http://localhost:8000
