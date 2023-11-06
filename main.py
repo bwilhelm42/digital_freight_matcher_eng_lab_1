@@ -3,6 +3,7 @@ from fastapi import FastAPI
 from fastapi.responses import PlainTextResponse
 
 import order
+import price_calculator
 
 app = FastAPI()
 
@@ -19,3 +20,9 @@ def read_item(item_id: int, q: Union[str, None] = None):
 def get_order(order_details: order.Order):
     order.save_order(order_details)
     return f"order saved\n"
+
+@app.get("/price")
+def calculate_price(miles: int,
+                    pallets: int = 0,
+                    packages: int = 0) -> float:
+    return price_calculator.calculate(miles, pallets, packages)
