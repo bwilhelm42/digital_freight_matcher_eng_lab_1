@@ -1,28 +1,20 @@
-from typing import Union
 from fastapi import FastAPI
-from fastapi.responses import PlainTextResponse
 
-import order
-import price_calculator
+from api.db_routes import router as data_router
+from api.price import router as price_router
+from db.database import create_tables
 
 app = FastAPI()
 
+app.include_router(data_router)
+app.include_router(price_router)
+
+
+@app.on_event("startup")
+def on_startup():
+    create_tables()
+
+
 @app.get("/")
 def read_root():
-    return {"Hello": "everyone"}
-
-
-@app.get("/items/{item_id}")
-def read_item(item_id: int, q: Union[str, None] = None):
-    return {"item_id": item_id, "q": q}
-
-@app.post("/orders", response_class=PlainTextResponse)
-def get_order(order_details: order.Order):
-    order.save_order(order_details)
-    return f"order saved\n"
-
-@app.get("/price")
-def calculate_price(miles: int,
-                    pallets: int = 0,
-                    packages: int = 0) -> float:
-    return price_calculator.calculate(miles, pallets, packages)
+    return "Welcome to the Digital Freight Matcher API!"
