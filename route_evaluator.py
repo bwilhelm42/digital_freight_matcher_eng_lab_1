@@ -2,7 +2,6 @@ import json
 from triangle import Triangle
 from geopy import distance
 from order import Order
-from typing import Tuple
 
 def possible_route(order: Order) -> bool:
 	# eventually this will be a db call to get a list of orders

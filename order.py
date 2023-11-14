@@ -1,5 +1,4 @@
-from typing import Union, Tuple
-from fastapi import FastAPI, Request
+from typing import Tuple
 
 # this is to validate and parse json payloads
 from pydantic import BaseModel
