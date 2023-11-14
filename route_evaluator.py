@@ -4,7 +4,6 @@ from geopy import distance
 from order import Order
 
 def possible_route(order: Order) -> bool:
-	# eventually this will be a db call to get a list of orders
 	start = order.location_origin
 	end = order.location_destination
 
