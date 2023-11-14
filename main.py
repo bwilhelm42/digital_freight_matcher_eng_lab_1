@@ -1,12 +1,10 @@
-import json
 from typing import Union
-from typing import Tuple
 from fastapi import FastAPI
 from fastapi.responses import PlainTextResponse
 
-import route_evaluator
 from order import Order
-import price_calculator
+from route_evaluator import possible_route
+from price_calculator import calculate
 
 app = FastAPI()
 
@@ -26,9 +24,9 @@ def get_order(order: Order):
 
 @app.get("/price")
 def calculate_price(miles: int, pallets: int = 0, packages: int = 0) -> float:
-    return price_calculator.calculate(miles, pallets, packages)
+    return calculate(miles, pallets, packages)
 
 @app.post("/validate_order")
 def get_routes(order: Order) -> bool:
-    return route_evaluator.possible_route(order)
+    return possible_route(order)
     
