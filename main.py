@@ -26,7 +26,7 @@ def get_order(order: Order):
 def calculate_price(miles: int, pallets: int = 0, packages: int = 0) -> float:
     return calculate(miles, pallets, packages)
 
-@app.post("/validate_order")
+@app.post("/get_routes")
 def get_routes(order: Order) -> bool:
     return possible_route(order)
     
