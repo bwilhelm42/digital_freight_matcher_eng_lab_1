@@ -1,16 +1,15 @@
-from typing import Union
-from fastapi import FastAPI, Request
+from typing import Tuple
 
 # this is to validate and parse json payloads
 from pydantic import BaseModel
 
 class Order(BaseModel):
-    location_origin: float
-    location_destination: float
+    location_origin: Tuple[float, float]
+    location_destination: Tuple[float, float]
     client: str
     cargo: str
     contract_type: str
 
-def save_order(order_object: Order):
-    with open("file.json","a") as file:
-        file.write(order_object.model_dump_json() + "\n")
+    def save_order(self):
+        with open("order.json","a") as file:
+            file.write(self.model_dump_json() + "\n")

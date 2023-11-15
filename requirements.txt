@@ -4,3 +4,4 @@ sqlalchemy
 pytest
 numpy
 pandas
+geopy
