@@ -6,7 +6,7 @@ ENV PYTHONBUFFERED 1
 
 # install system dependencies
 RUN apt-get update \
-  && apt-get -y install netcat gcc libpq-dev \
+  && apt-get -y install netcat gcc libpq-dev default-libmysqlclient-dev pkg-config \
   && apt-get clean
 
 # install python dependencies
