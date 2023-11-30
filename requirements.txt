@@ -5,3 +5,5 @@ pytest
 numpy
 pandas
 mysqlclient==2.2.0
+pymysql
+openpyxl
