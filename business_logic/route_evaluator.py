@@ -26,5 +26,5 @@ def get_possible_route(order: Order, db: Session = Depends(get_db)) -> Optional[
 def valid_point(point: Location, route: Route):
 	return Triangle(
 		start_to_final = distance.distance(route.location_origin, route.location_dest).mi,
-		start_to_point = distance.distance(route.location_origin, point.location_origin).mi,
-		final_to_point = distance.distance(route.location_dest, point.location_origin).mi).height < 2
+		start_to_point = distance.distance(route.location_origin, point).mi,
+		final_to_point = distance.distance(route.location_dest, point).mi).height < 2
