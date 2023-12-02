@@ -164,6 +164,6 @@ Depending on your setup you may need to run the docker commands with `sudo`.
 
 - [Eng. Labs 1 - Digital Freight Matching](https://docs.google.com/spreadsheets/d/1cSc2ZNoU0yKbgvMdWE2HC2mP214_PApjAlzfwvX_KUs/edit#gid=0)
 - [Digital Freight Matching project google doc](https://docs.google.com/document/d/1mUVKYH44ZExaQzY1FqbnZCXabasc_k3vlqs3n3qKqg4/edit?pli=1#heading=h.8g5sf6ejx8q6)
-- [Jira board](https://goodlistener.atlassian.net/jira/software/projects/DFM/boards/5)
+- [project board](https://github.com/users/bwilhelm42/projects/1/views/1)
 
 <span><i>Made at <a href='https://qwasar.io'>Qwasar Silicon Valley</a></i></span> <span><img alt='Qwasar Silicon Valley Logo' src='https://storage.googleapis.com/qwasar-public/qwasar-logo_50x50.png' width='20px'></span>
