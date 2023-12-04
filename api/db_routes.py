@@ -6,6 +6,7 @@ from sqlalchemy.orm import Session
 import api.schemas as schemas
 import db.models as models
 from db.database import get_db
+from api.db_response_models import OrderInfoResponse
 
 router = APIRouter()
 
@@ -56,6 +57,14 @@ def create_order(order: schemas.OrderBase, db: Session = Depends(get_db)):
 def get_orders(db: Session = Depends(get_db)):
     orders = db.query(models.Order).all()
     return orders
+
+
+@router.get("/order/{order_id}", response_model=OrderInfoResponse)
+def get_order_by_id(order_id: str, db: Session = Depends(get_db)):
+    order = db.query(models.Order).where(models.Order.id == order_id).first()
+    return OrderInfoResponse(order=schemas.Order(**vars(order)),
+                             start_location=schemas.Location(**vars(order.location_origin)),
+                             end_location=schemas.Location(**vars(order.location_dest)))
 
 
 # Cargo
