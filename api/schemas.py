@@ -1,4 +1,4 @@
-from typing import List
+from typing import List, Optional
 
 from pydantic import BaseModel
 
@@ -30,12 +30,14 @@ class Client(ClientBase):
 
 
 class OrderBase(BaseModel):
-    location_origin_id: int
-    location_dest_id: int
-    client_id: int
-    cargo_id: int
-    route_id: int
-    contract_type: str
+    location_origin_lat: float
+    location_origin_long: float
+    location_dest_lat: float
+    location_dest_long: float
+    client_id: Optional[int]
+    cargo_id: Optional[int]
+    route_id: Optional[int]
+    contract_type: Optional[str]
 
 
 class Order(OrderBase):
