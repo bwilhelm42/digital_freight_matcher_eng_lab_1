@@ -73,43 +73,23 @@ route: [
 
 ![routes](/assets/existing_routes.png)
 
-## Production Docker Setup
-
-1. Install Docker
-1. Build the docker image
-
-	```sh
-	docker build -t dfm .
-	```
-
-1. Run the container
-
-	```sh
-	docker run -p 8000:8000 dfm
-	```
-
-1. Open the browser and go to http://localhost:8000
-
-## Development Docker Setup
+## Docker Setup
 
 This setup allows hot reloading of the code.
 Depending on your setup you may need to run the docker commands with `sudo`.
 
-1. Install Docker
+1. Install Docker and docker-compose
 	- Install docker-buildx if you don't have docker desktop installed
-3. Build the docker image
+
+2. Navigate to the project directory. In the docker-compose.yml file, set the target as development or production accordingly
+
+3. Build the docker compose image
 
 	```sh
-	docker build --target development -t dfm .
+	docker compose up
 	```
 
-4. Run the container
-
-	```sh
-	docker run -p 8000:8000 -v .:/app dfm
-	```
-
-5. Open the browser and go to http://localhost:8000
+4. Open the browser and go to http://localhost:8000
 
 ## VirtEnv Setup
 
@@ -164,6 +144,6 @@ Depending on your setup you may need to run the docker commands with `sudo`.
 
 - [Eng. Labs 1 - Digital Freight Matching](https://docs.google.com/spreadsheets/d/1cSc2ZNoU0yKbgvMdWE2HC2mP214_PApjAlzfwvX_KUs/edit#gid=0)
 - [Digital Freight Matching project google doc](https://docs.google.com/document/d/1mUVKYH44ZExaQzY1FqbnZCXabasc_k3vlqs3n3qKqg4/edit?pli=1#heading=h.8g5sf6ejx8q6)
-- [Jira board](https://goodlistener.atlassian.net/jira/software/projects/DFM/boards/5)
+- [project board](https://github.com/users/bwilhelm42/projects/1/views/1)
 
 <span><i>Made at <a href='https://qwasar.io'>Qwasar Silicon Valley</a></i></span> <span><img alt='Qwasar Silicon Valley Logo' src='https://storage.googleapis.com/qwasar-public/qwasar-logo_50x50.png' width='20px'></span>
